@@ -1,4 +1,4 @@
-package recursion;
+package recursion.permutations;
 
 public class All_Permutations_of_a_String {
 
