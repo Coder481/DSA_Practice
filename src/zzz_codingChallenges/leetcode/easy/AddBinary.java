@@ -5,12 +5,7 @@ public class AddBinary {
     public static void main(String[] args) {
         String a = "10111";
         String b = "10110";
-//        System.out.println(solve(a,b));
-
-        int aInt = Integer.parseInt(a,2);
-        int bInt = Integer.parseInt(b,2);
-
-        System.out.println(Integer.toBinaryString(aInt + bInt));
+        System.out.println(solve(a,b));
 
     }
 
