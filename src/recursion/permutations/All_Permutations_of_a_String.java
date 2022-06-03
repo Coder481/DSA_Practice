@@ -5,9 +5,24 @@ public class All_Permutations_of_a_String {
     public static void main(String[] args) {
 
         String s = "abc";
-        printAllPermutations(s,0,s.length()-1);
-
+//        printAllPermutations(s,0,s.length()-1);
+        solve(s,"");
     }
+
+
+
+    private static void solve(String ip, String op){
+        if(ip.length() == 0) {
+            System.out.println(op);
+            return;
+        }
+        for(int i=0; i<ip.length(); i++){
+            String tempOP = op+ip.charAt(i);
+            String tempIP = ip.substring(0,i) + ip.substring(i+1);
+            solve(tempIP,tempOP);
+        }
+    }
+
 
     private static void printAllPermutations(String s, int l, int r) {
         if (l==r){
