@@ -1,34 +1,77 @@
 package stackDS.problems;
 
-import java.util.Arrays;
-import java.util.Stack;
+import javafx.util.Pair;
+
+import java.util.*;
 
 public class Asteroid {
 
     public static void main(String[] args) {
 
-        int[] arr = {-5,-3,5,2,10,-8};
+        int[] arr = {-2,-1,1,2};
         System.out.println(Arrays.toString(solve(arr)));
+
+        int[][] courses = {{1,0},{2,0},{3,1},{3,2}};
+        System.out.println(getAdjacencyList(courses));
+        int n = 1;
+        System.out.println(Arrays.toString(getCourses(courses,n)));
 
     }
 
-    private static int[] solve(int[] arr){
-        Stack<Integer> s = new Stack<>();
-        for(int e : arr){
+
+    // Courses problem
+    private static int[] getCourses(int[][] prerequisites, int numCourses){
+        Map<Integer,Integer> adjMap = adjacencyList(prerequisites);
+        PriorityQueue<Pair<Integer,Integer>> minH = new PriorityQueue<>(Comparator.comparingInt(Pair::getValue));
+        for(int key : adjMap.keySet()){
+            minH.add(new Pair<>(key,adjMap.get(key)));
+        }
+        int[] res = new int[numCourses];
+        int i = 0;
+        while(minH.size() != 0)
+            res[i++] = minH.poll().getKey();
+        return res;
+    }
+    private static Map<Integer,Integer> adjacencyList(int[][] courses){
+        Map<Integer,Integer> map = new HashMap<>();
+        map.put(0,0);
+        for(int[] course : courses){
+
+            map.put(course[0],map.getOrDefault(course[0],0)+1);
+        }
+        return map;
+    }
+
+    private static Map<Integer,List<Integer>> getAdjacencyList(int[][] courses){
+        Map<Integer,List<Integer>> map = new HashMap<>();
+        map.put(0,new ArrayList<>());
+        for(int[] course : courses){
+            List<Integer> list = map.getOrDefault(course[0],new ArrayList<>());
+            list.add(course[1]);
+            map.put(course[0],list);
+        }
+        return map;
+    }
+
+
+    private static int[] solve(int[] asteroids){
+        Stack<Integer> stack = new Stack<>();
+        for(int asteroid : asteroids){
 
             boolean canPush = true;
-            while(!s.isEmpty() && (s.peek()*e)<0){
-                int absE = Math.abs(e);
-                int absTop = Math.abs(s.peek());
+            while(!stack.isEmpty() && (stack.peek()*asteroid)<0){
+                if(stack.peek() < 0 && asteroid > 0) break;
+                int absAsteroid = Math.abs(asteroid);
+                int absTop = Math.abs(stack.peek());
 
                 // If the upcoming asteroid is bigger than the top element of stack
                 // then explode the top element
-                if(absE > absTop)
-                    s.pop();
+                if(absAsteroid > absTop)
+                    stack.pop();
 
                 // If both asteroid have same sizes
-                else if(absE == absTop){
-                    s.pop();
+                else if(absAsteroid == absTop){
+                    stack.pop();
                     canPush = false;
                     break;
                 }
@@ -40,15 +83,15 @@ public class Asteroid {
                 }
             }
 
-            if(canPush) s.push(e);
+            if(canPush) stack.push(asteroid);
         }
 
-        int size = s.size();
-        int[] res = new int[size];
+        int size = stack.size();
+        int[] result = new int[size];
         for(int i=size-1; i>=0; i--)
-            res[i] = s.pop();
+            result[i] = stack.pop();
 
-        return res;
+        return result;
     }
 
 }

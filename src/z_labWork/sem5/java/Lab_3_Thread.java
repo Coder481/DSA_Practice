@@ -1,4 +1,4 @@
-package z_labWork;
+package z_labWork.sem5.java;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

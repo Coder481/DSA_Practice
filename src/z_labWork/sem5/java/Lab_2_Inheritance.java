@@ -1,4 +1,4 @@
-package z_labWork;
+package z_labWork.sem5.java;
 
 public class Lab_2_Inheritance{
 

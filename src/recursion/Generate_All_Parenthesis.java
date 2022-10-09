@@ -12,7 +12,10 @@ public class Generate_All_Parenthesis {
 
         if (n==0) return;
 
+
         solve(open,closed,op);
+
+        solve1(op,open,closed);
 
     }
 
@@ -36,6 +39,14 @@ public class Generate_All_Parenthesis {
             solve(open,closed - 1,op2);
         }
 
+    }
+
+    private static void solve1(String op, int o, int c){
+        if(o==c) solve1(op + "(", o - 1, c);
+        else{
+            if (o != 0) solve1(op + "(", o - 1, c);
+            solve1(op+")",o,c-1);
+        }
     }
 
 }
