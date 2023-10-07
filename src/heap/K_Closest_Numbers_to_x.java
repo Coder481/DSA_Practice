@@ -1,6 +1,7 @@
 package heap;
 
-import javafx.util.Pair;
+
+import globalClasses.Pair;
 
 import java.util.PriorityQueue;
 
@@ -21,7 +22,7 @@ public class K_Closest_Numbers_to_x {
         Integer[] arr = {6,5,7,9,8};
         int k = 3, x = 10;
 
-        PriorityQueue<Pair<Integer,Integer>> maxH = new PriorityQueue<>((a,b)->b.getValue()-a.getValue());
+        PriorityQueue<Pair<Integer,Integer>> maxH = new PriorityQueue<>((a, b)->b.getValue()-a.getValue());
 
         for (Integer integer : arr) {
             maxH.add(new Pair<>(integer, Math.abs(integer - x)));

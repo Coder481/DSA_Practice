@@ -1,6 +1,7 @@
 package divideAndConquer;
 
-import javafx.util.Pair;
+
+import globalClasses.Pair;
 
 public class FindMinMax {
 

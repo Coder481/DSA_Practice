@@ -1,6 +1,7 @@
 package zzz_codingChallenges.leetcode.contests.weeklyContest290;
 
-import javafx.util.Pair;
+
+import globalClasses.Pair;
 
 import java.util.ArrayList;
 import java.util.HashSet;

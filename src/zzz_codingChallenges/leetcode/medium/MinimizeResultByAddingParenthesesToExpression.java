@@ -1,6 +1,7 @@
 package zzz_codingChallenges.leetcode.medium;
 
-import javafx.util.Pair;
+
+import globalClasses.Pair;
 
 import javax.script.ScriptEngineManager;
 

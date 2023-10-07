@@ -1,6 +1,7 @@
 package heap;
 
-import javafx.util.Pair;
+
+import globalClasses.Pair;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,6 +1,7 @@
 package stackDS.problems;
 
-import javafx.util.Pair;
+
+import globalClasses.Pair;
 
 import java.util.*;
 import java.util.stream.Collectors;

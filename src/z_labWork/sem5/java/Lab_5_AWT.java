@@ -1,6 +1,5 @@
 package z_labWork.sem5.java;
 
-import javafx.scene.control.Alert;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -51,9 +50,9 @@ public class Lab_5_AWT {
             tf.setText("Welcome");
             tf.setVisible(true);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Button Clicked");
-            alert.show();
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setContentText("Button Clicked");
+//            alert.show();
         }
     }
 

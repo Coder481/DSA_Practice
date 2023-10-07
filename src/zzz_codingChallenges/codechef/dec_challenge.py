@@ -28,7 +28,7 @@ else:
         days += 1
         if vac >= p:print(days);exit()'''
 
-# 2 Even Pair Sum
+# 2 Even globalClasses.Pair Sum
 '''import math as m
 
 for _ in range(int(input())):
