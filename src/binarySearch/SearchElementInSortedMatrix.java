@@ -1,8 +1,7 @@
 package binarySearch;
 
-import javafx.util.Pair;
+import globalClasses.Pair;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -40,6 +39,7 @@ public class SearchElementInSortedMatrix {
                 arr[i][j] = Integer.parseInt(enteredArr[j]);
             }
         }
+
 
         // Take input the element for searching
         print("Enter the element you want to search:");

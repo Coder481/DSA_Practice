@@ -1,4 +1,4 @@
-# 1) Valid Pair
+# 1) Valid globalClasses.Pair
 '''a,b,c = map(int,input().split())
 s = set()
 s.add(a)

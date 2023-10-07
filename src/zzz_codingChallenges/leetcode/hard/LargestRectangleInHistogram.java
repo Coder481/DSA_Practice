@@ -1,6 +1,7 @@
 package zzz_codingChallenges.leetcode.hard;
 
-import javafx.util.Pair;
+
+import globalClasses.Pair;
 
 import java.util.Stack;
 
